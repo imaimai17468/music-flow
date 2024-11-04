@@ -11,6 +11,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarTrigger,
 } from "@/components/ui/sidebar";
 
 const items = [
@@ -44,6 +45,7 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar>
+      <SidebarTrigger className="absolute top-4 -right-10" />
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>Header</SidebarMenuItem>
