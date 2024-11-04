@@ -17,6 +17,7 @@ import {
   applyEdgeChanges,
   applyNodeChanges,
 } from "@xyflow/react";
+import { useTheme } from "next-themes";
 import { useCallback, useState } from "react";
 
 const initialNodes: Node[] = [
@@ -39,6 +40,7 @@ const onNodeDrag: OnNodeDrag = (_, node) => {
 };
 
 export const ReactFlowContent: React.FC = () => {
+  const { theme } = useTheme();
   const [nodes, setNodes] = useState<Node[]>(initialNodes);
   const [edges, setEdges] = useState<Edge[]>(initialEdges);
 
@@ -64,6 +66,7 @@ export const ReactFlowContent: React.FC = () => {
         fitView
         fitViewOptions={fitViewOptions}
         defaultEdgeOptions={defaultEdgeOptions}
+        colorMode={theme === "dark" ? "dark" : "light"}
       >
         <Background />
         <Controls />
